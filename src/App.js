@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import AppContent from "./Header";
+
+import GalaxyCard from "./card";
 function App() {
   const [appStuff, setAppStuff] = useState([]);
   useEffect(() => {
@@ -20,18 +21,15 @@ function App() {
   console.log(appStuff);
   return (
     <div className="App">
-      <AppContent
-        key={appStuff.id}
+      <GalaxyCard
+        
         title={appStuff.title}
         explanation={appStuff.explanation}
         image={appStuff.url}
         date={appStuff.date}
       />
 
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      
     </div>
   );
 }
